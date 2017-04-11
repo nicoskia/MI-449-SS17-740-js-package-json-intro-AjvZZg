@@ -6,6 +6,10 @@
     "dev:sass": "node-sass source/scss/style.scss --watch --output=compiled/css --output-style=compressed --source-map=true",
     "dev": "run-p dev:*",
     "build:sass": "node-sass source/scss/style.scss --output=compiled/css --output-style=compressed --source-map=true",
+    "build:htmlhint": "htmlhint index.html",
+    "build:stylelint": "stylelint source/scss/style.scss",
+    "build:standard": "standard clicky.js",
+    "build": "run-s build:*",
     "deploy:surge": "surge --project . --domain nicoskia-kg-tgc7noax99ajvzzg.surge.sh/",
     "deploy": "run-s build:* deploy:surge"
   },
@@ -18,5 +22,8 @@
     "stylelint": "^7.10.1",
     "stylelint-config-standard": "^16.0.0",
     "surge": "^0.19.0"
+  },
+  "stylelint": {
+    "extends":"stylelint-config-standard"
   }
 }
