@@ -5,13 +5,13 @@
     "dev:server": "live-server",
     "dev:sass": "node-sass source/scss/style.scss --watch --output=compiled/css --output-style=compressed --source-map=true",
     "dev": "run-p dev:*",
+    "lint:htmlhint": "htmlhint index.html",
+    "lint:stylelint": "stylelint source/scss/style.scss",
+    "lint:standard": "standard clicky.js",
     "build:sass": "node-sass source/scss/style.scss --output=compiled/css --output-style=compressed --source-map=true",
-    "build:htmlhint": "htmlhint index.html",
-    "build:stylelint": "stylelint source/scss/style.scss",
-    "build:standard": "standard clicky.js",
-    "build": "run-s build:*",
+    "build": "run-s lint:* build:*",
     "deploy:surge": "surge --project . --domain nicoskia-kg-tgc7noax99ajvzzg.surge.sh/",
-    "deploy": "run-s build:* deploy:surge"
+    "deploy": "run-s lint:* build:* deploy:surge"
   },
   "devDependencies": {
     "live-server": "^1.2.0",
