@@ -27,11 +27,11 @@ table.menu {
   & td {
     text-align: center;
 
-    & .label {
+    &.label {
       width: 80px;
     }
 
-    & .label,
+    &.label,
     .result {
       text-align: right;
     }
@@ -49,14 +49,14 @@ table.menu {
     transition: $trans;
     border-radius: 3px;
 
-    & :hover {
+    &:hover {
       cursor: pointer;
       background-color: #ddf;
       width: 85%;
       transition: $trans;
     }
 
-    & :active,
+    &:active,
     :focus {
       outline: none;
     }
@@ -70,7 +70,7 @@ table.menu {
   border: $border;
   box-shadow: $shadow;
 
-  & :hover {
+  &:hover {
     cursor: pointer;
   }
 }
